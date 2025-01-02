@@ -17,14 +17,17 @@ class ZekrCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(10.0),
       alignment: const Alignment(-0.7, -0.8),
-      decoration: const BoxDecoration(
-        color: Color(0xFF0A014F),
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(20.0),
-          bottomRight: Radius.circular(20.0),
-          topLeft: Radius.circular(20.0),
-          bottomLeft: Radius.circular(20.0),
-        ),
+      decoration: BoxDecoration(
+        color: const Color(0xFF0A014F),
+        borderRadius: BorderRadius.circular(20.0),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
       child: Column(
         children: [
@@ -53,8 +56,8 @@ class ZekrCard extends StatelessWidget {
                 ),
               ),
               alignment: Alignment.bottomCenter,
-              minimumSize: WidgetStateProperty.all<Size>(
-                  const Size(double.infinity, .0)),
+              minimumSize:
+                  WidgetStateProperty.all<Size>(const Size(double.infinity, 0)),
               padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                   const EdgeInsets.all(15.0)),
               backgroundColor: WidgetStateProperty.all<Color>(counterColor),
